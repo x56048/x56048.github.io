@@ -1,77 +1,171 @@
 
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="zh">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <title>菜虚鲲跳跳乐</title>
-    <link rel="stylesheet" href="ceyan.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <script src="index.js"></script>
-</head>
-
-<body id="t" class="offline">
-    <div id="messageBox" class="sendmessage">
-        <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">菜虚鲲跳跳乐</h1>
-        <div class="niokbutton" onclick="okbuttonsend()"></div>
-    </div>
-    <audio id="offline-sound-press">
-        <source src="https://res.wx.qq.com/voice/getvoice?mediaid=MzkyMTM4NDc3MV8xMDAwMDAwNzU=" type="audio/mpeg">
-        </source>
-    </audio>
-    <audio id="offline-sound-hit">
-        <source src="https://res.wx.qq.com/voice/getvoice?mediaid=MzkyMTM4NDc3MV8xMDAwMDAzNjA=" type="audio/mpeg">
-        </source>
-    </audio>
-    <audio id="offline-sound-reached">
-        <source src="https://res.wx.qq.com/voice/getvoice?mediaid=MzkyMTM4NDc3MV8xMDAwMDAxMDk=" type="audio/mpeg">
-        </source>
-    </audio>
-    <div id="main-frame-error" class="interstitial-wrapper">
-        <div id="main-content">
-            <div class="icon icon-offline" alt=""></div>
-        </div>
-        <div id="offline-resources">
-            <img id="offline-resources-1x" src="100-offline-sprite.png">
-            <img id="offline-resources-2x" src="200-offline-sprite.png">
-            <template id="audio-resources">
-                <audio id="offline-sound-press">
-                    <source src="https://res.wx.qq.com/voice/getvoice?mediaid=MzkyMTM4NDc3MV8xMDAwMDAwNzU="
-                        type="audio/mpeg">
-                    </source>
-                </audio>
-                <audio id="offline-sound-hit">
-                    <source src="https://res.wx.qq.com/voice/getvoice?mediaid=MzkyMTM4NDc3MV8xMDAwMDAzNjA="
-                        type="audio/mpeg">
-                    </source>
-                </audio>
-                <audio id="offline-sound-reached">
-                    <source src="https://res.wx.qq.com/voice/getvoice?mediaid=MzkyMTM4NDc3MV8xMDAwMDAxMDk="
-                        type="audio/mpeg">
-                    </source>
-                </audio>
-            </template>
-        </div>
-    </div>
-    <div style="text-align: center;">
-        点击屏幕空白处开始或跳跃
-    </div>
-
-    <div style="text-align: center;position: relative;z-index: 2;">
-        <h1><a href=""></a></h1>
-    </div>
-
-</body>
-
-<script>
-    document.onkeydown = function (evt) {
-        evt = evt || window.event;
-        if (evt.keyCode == 32) {
-            var box = document.getElementById("messageBox");
-            box.style.visibility = "hidden";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
         }
-    };
-</script>
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        *{    
+	box-sizing: border-box;
+}
+body{
+	font-family:"緇�蒐��藥�"; 
+	font-size: 0.875rem;
+	margin: 0;
+	line-height: 1.8;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	max-width: 100%;
+}
+/*紊顔���阪���桁�*/
+header{
+	width: 85%;
+	margin: 10px auto;
+}
+.logo{
+	display: flex;
+	justify-content: center;
+}
+nav ul li a{
+	color: #337ab7;
+}
+nav ul li{
+	display: flex;
+	justify-content: center;
+}
+.navbar form {
+	display: flex;
+}
+.navbar input {
+	height: 25px;
+ 	border-radius: 42px;
+ 	border: 1px solid #C0C0C0;
+ 	flex-grow: 1;
+}
+.navbar input:focus {
+ 	outline: none;   
+}
+.navbar button {
+	cursor: pointer;
+	border: 1px solid #C0C0C0;
+ 	outline: none;         /*�紙�������莉��*/
+}
+.navbar button:before{     /*���ユ��膣√�丈��*/
+ 	content: "\f002";
+ 	font-family: FontAwesome;
+ 	color: #337ab7;
+}
 
+
+
+
+
+
+
+
+
+/*蕁笈��篆≧�������桁�*/
+
+        @media(min-width:768px){
+            header{
+                width: 90%;
+            }
+            nav ul{
+                display: flex;
+                margin-left: 1rem;
+            }
+            nav ul li a{
+                padding: 0 1rem;
+                text-align: center;
+            }
+            nav{
+                display: flex;
+                justify-content: center;
+            }
+            .top{
+                display: flex;
+            }
+            .navbar form{
+                width: 65%;
+                margin: 0 auto;
+                margin-top: 10px;
+	        }
+            
+        }
+        @media(min-width:992px){
+            header{
+                display: flex;
+            }
+            .navbar{
+                align-items: center;
+                display: flex;		
+                flex: 1;               /*��篌後����ご�����絎遵墾*/
+                justify-content: space-between;      
+            }
+            .navbar input{
+                flex-grow: 0;
+            }
+            .navbar form{
+                width: auto;
+                margin: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="000/logo.png" alt="">
+    </div>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">公司概况</a></li>
+                <li><a href="">华阳湖景区</a></li>
+                <li><a href="">岭南水乡小镇</a></li>
+                <li><a href="">意见反馈</a></li>
+            </ul>
+        </nav>
+        <form action="">
+            <input type="text" name="" id="">
+            <button class="submit">sub</button>
+        </form>
+    </div>
+</body>
 </html>
